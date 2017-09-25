@@ -1,9 +1,14 @@
-exports.default = {
-  aritGeo:(args) => {
+'use strict';
+
+module.exports = {
+  aritGeo: (args) => {
     const difference = args[2] - args[1];
     const divide = args[2] / args[1];
 
+
     for (const i = 0; i < args.length - 1; i++) {
+      if (args.length < 1)
+        return 0;
       if (typeof args[i] !== 'number') {
         return 'please input an array of numbers';
       } else {
@@ -17,7 +22,7 @@ exports.default = {
           return 'arithmetic';
         }
         else
-          return '-1';
+          return -1;
       }
     }
 

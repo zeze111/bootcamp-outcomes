@@ -6,15 +6,15 @@ chai.should();
 const expect = chai.expect;
 
 describe('aritGeo', function () {
-  it('should check that parameter is an array of numbers', function () {
-    const list = ['andela', 1, 2, 'zeze', 4];
+  it('should check that array is not empty', function () {
+    const list = [];
     app.aritGeo(list);
-    assert.equal(app.aritGeo(list), 'number');
+    assert.equal(aritGeo(list), 0);
   });
   it('should check that parameter does not start with 0', function () {
     const list = [0, 2, 4, 6];
     aritGeo(list);
-    expect(list).to.not.have(0);
+    assert.equal(aritGeo(list), 0)
   });
   it('should check that arithmetic is true', function () {
     const list = [2, 4, 6, 8, 10];
@@ -29,7 +29,7 @@ describe('aritGeo', function () {
   it('should check that is not geometric/arithmetic', function () {
     const list = [1, 4, 7, 16, 32];
     aritGeo(list);
-    assert.equal(aritGeo(list), '-1');
+    assert.equal(aritGeo(list), -1);
   });
   it('should check that arithmetic is true', function () {
     const list = [4, 8, 12, 16, 20];
@@ -41,19 +41,19 @@ describe('aritGeo', function () {
     aritGeo(list);
     assert.equal(aritGeo(list), 'geometric');
   });
-  it('should check that geometric is true', function () {
+  it('should check that that is not geometric/arithmetic', function () {
     const list = [3, 9, 21, 63];
     aritGeo(list);
-    assert.equal(aritGeo(list), '-1');
+    assert.equal(aritGeo(list), -1);
   });
-  it('should check that geometric is true', function () {
+  it('should check that array is not string', function () {
     const list = [2, 4, '9', 16, 32];
     aritGeo(list);
     expect(list).to.be.a('number');
   });
-  it('should check that geometric is true', function () {
-    const list = [2, 4, 0, 16, 32];
+  it('should check that parameter does not start with 0', function () {
+    const list = [0, 3, 9, 27, 81];
     aritGeo(list);
-    expect(list).to.not.have(0);
+    assert.equal(aritGeo(list), 0);
   });
 });
