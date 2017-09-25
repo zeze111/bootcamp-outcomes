@@ -1,0 +1,28 @@
+{
+  "name": "bootcamp-outcomes",
+  "version": "1.0.0",
+  "description": "test functions",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {
+    "chai": "^4.1.2"
+  },
+  "devDependencies": {
+    "mocha": "^3.5.3"
+  },
+  "scripts": {
+    "test": "mocha tests/arithTests.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zeze111/andela-bootcamp27.git"
+  },
+  "author": "Osaze Edo-Osagie",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zeze111/andela-bootcamp27/issues"
+  },
+  "homepage": "https://github.com/zeze111/andela-bootcamp27#readme"
+}
