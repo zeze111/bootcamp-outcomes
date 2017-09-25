@@ -49,7 +49,7 @@ describe('aritGeo', function () {
   it('should check that array is not string', function () {
     const list = [2, 4, '9', 16, 32];
     aritGeo(list);
-    expect(list).to.be.a('number');
+    assert.equal(aritGeo(list), 'please input an array of numbers');
   });
   it('should check that parameter does not start with 0', function () {
     const list = [0, 3, 9, 27, 81];
