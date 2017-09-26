@@ -98,13 +98,25 @@ class Student extends Person {
     return `Hi! I am ${this.name}, I am a ${this.course} student`;
   }
 
-  //check status to get fees
+  //check status, course to get fees
   getFees() {
-    if (this.status == 'full-time') {
-      this.fees = 1000000;
+    if (this.course == 'technology' || this.course == 'engineering' || this.course == 'science' && this.status == 'part-time') {
+      this.fees = 300000;
     }
-    if (this.status == 'part-time') {
+    if (this.course == 'technology' || this.course == 'engineering' || this.course == 'science' && this.status == 'full-time') {
+      this.fees = 600000;
+    }
+    if (this.course == 'law' && this.status == 'part-time') {
+      this.fees = 250000;
+    }
+    if (this.course == 'law' && this.status == 'full-time') {
       this.fees = 500000;
+    }
+    if (this.course == 'medicine' && this.status == 'part-time') {
+      this.fees = 500000;
+    }
+    if (this.course == 'medicine' && this.status == 'full-time') {
+      this.fees = 1000000;
     }
     return `School Fees for ${this.name} is NGN${this.fees}`;
   }

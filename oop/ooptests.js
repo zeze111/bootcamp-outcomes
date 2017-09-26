@@ -6,7 +6,7 @@ const Tutor = app.Tutor;
 const assert = chai.assert;
 
 const lecturer1 = new Lecturer('Helen', 'Female', 60, 'engineering');
-const student1 = new Student('Omono', 'Female', 23, 'law', 'Part-time');
+const student1 = new Student('Omono', 'Female', 23, 'law', 'part-time');
 const tutor1 = new Tutor('Ehi', 'Male', 30, 'science', 'B');
 
 
@@ -42,7 +42,7 @@ describe('OOP', () => {
       assert.equal(lecturer1.getSalary(), 'Salary is NGN500000');
     });
     it('should return school fees of student', () => {
-      assert.equal(student1.getFees(), 'School Fees for Omono is NGN500000');
+      assert.equal(student1.getFees(), 'School Fees for Omono is NGN250000');
     });
     it('should return new value of salary method for tutor', () => {
       assert.equal(tutor1.getSalary(), 'Salary for Ehi is NGN125000');
