@@ -1,0 +1,25 @@
+{
+  "name": "oop",
+  "version": "1.0.0",
+  "description": "Describes OOP classes entailing inheritance, polymorphism and encapsulation",
+  "main": "oop.js",
+  "dependencies": {
+    "chai": "^4.1.2"
+  },
+  "devDependencies": { 
+    "mocha": "^3.5.3"
+  },
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zeze111/bootcamp-outcomes/tree/develope"
+  },
+  "keywords": [
+    "oop",
+    "inheritance"
+  ],
+  "author": "Osaze Edo-Osagie",
+  "license": "ISC"
+}
