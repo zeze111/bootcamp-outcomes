@@ -22,8 +22,8 @@ class Person {
 
 
 class Lecturer extends Person {
-  constructor(name, gender, age, course) {
-    super(name, gender, age);
+  constructor(lName, lGender, lAge, course) {
+    super(lName, lGender, lAge);
     this.course = course;
     this.salary;
     this.benefitLecturers = [];
@@ -35,7 +35,7 @@ class Lecturer extends Person {
 
   //get salary dependent on course taught
   getSalary() {
-    if (this.course == 'law' ) {
+    if (this.course == 'law') {
       this.salary = 400000;
     }
     if (this.course == 'technology' || this.course == 'engineering' || this.course == 'science') {
@@ -60,10 +60,30 @@ class Lecturer extends Person {
 }
 
 
+class Tutor extends Lecturer {
+  constructor(tName, tGender, tAge, tCourse, semester) {
+    super(tName, tGender, tAge, tCourse)
+    this.semester = semester;
+  }
+
+  greeting() {
+    return 'Hi! I\'m ${this.name} , I\'m tutoring ${this.course} for Semester ${this.semester}';
+  }
+
+  getTutorSemester() {
+    return 'Semester ${this,semester}';
+  }
+
+  getSalary() {
+    this.salary = super.getSalary() / 4;
+  }
+}
+
+
 
 class Student extends Person {
-  constructor(name, gender, age, course, status) {
-    super(this, name, gender, age);
+  constructor(sName, sGender, sAge, course, status) {
+    super(sName, sGender, sAge);
     this.stautus = status;
     this.course = course;
     this.fees;
@@ -75,16 +95,16 @@ class Student extends Person {
 
   //check status, course and get fees
   getFees() {
-    if (this.course == 'technology' || this.course == 'engineering' || this.course == 'science'  && this.status == 'part-time') {
+    if (this.course == 'technology' || this.course == 'engineering' || this.course == 'science' && this.status == 'part-time') {
       this.fees = 300000;
     }
-    if (this.course == 'technology' || this.course == 'engineering' || this.course == 'science'  && this.status == 'full-time') {
+    if (this.course == 'technology' || this.course == 'engineering' || this.course == 'science' && this.status == 'full-time') {
       this.fees = 600000;
     }
-    if (this.course == 'law' && this.status == 'part-time' ) {
+    if (this.course == 'law' && this.status == 'part-time') {
       this.fees = 250000;
     }
-    if (this.course == 'law' && this.status == 'full-time' ) {
+    if (this.course == 'law' && this.status == 'full-time') {
       this.fees = 250000;
     }
     if (this.course === 'medicine' && this.status == 'part-time') {
