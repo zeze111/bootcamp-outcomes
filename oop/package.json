@@ -3,14 +3,17 @@
   "version": "1.0.0",
   "description": "Describes OOP classes entailing inheritance, polymorphism and encapsulation",
   "main": "oop.js",
+  "directories": {
+    "test": "oop"
+  },
   "dependencies": {
     "chai": "^4.1.2"
   },
-  "devDependencies": { 
+  "devDependencies": {
     "mocha": "^3.5.3"
   },
   "scripts": {
-    "test": "mocha"
+    "test": "mocha ooptests.js"
   },
   "repository": {
     "type": "git",

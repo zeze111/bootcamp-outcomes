@@ -1,14 +1,12 @@
 class Person {
   constructor(name, gender, age) {
-    this.id = 1000;
-    id++;
     this.name = name;
     this.gender = gender;
     this.age = age;
   }
 
   greeting() {
-    return 'Hi! I\'m ${this.name}';
+    return `Hi! I am ${this.name}`;
   }
 
   getGender() {
@@ -30,7 +28,11 @@ class Lecturer extends Person {
   }
 
   greeting() {
-    return 'Hi! I\'m ${this.name} , I\'m a Lecturer';
+    return `Hi! I am ${this.name}, I am a Lecturer`;
+  }
+
+  getCourse() {
+    return `${this.course}`;
   }
 
   //get salary dependent on course taught
@@ -44,17 +46,17 @@ class Lecturer extends Person {
     if (this.course == 'medicine') {
       this.salary = 700000;
     }
-    return 'Salary is NGN ${this.salary}';
+    return `Salary is NGN${this.salary}`;
   }
 
   //add lecturer to array of benefiters
   qualifyBenefits() {
     if (this.age >= 60) {
       this.benefitLecturers.push(this.name);
-      return '${this.name} is qualified for benefits';
+      return `${this.name} is qualified for benefits`;
     }
     else {
-      return '${this.name} does not qualify, must be 60 and above';
+      return `${this.name} does not qualify, must be 60 and above`;
     }
   }
 }
@@ -64,18 +66,21 @@ class Tutor extends Lecturer {
   constructor(tName, tGender, tAge, tCourse, semester) {
     super(tName, tGender, tAge, tCourse)
     this.semester = semester;
+    this.tSalary;
   }
 
   greeting() {
-    return 'Hi! I\'m ${this.name} , I\'m tutoring ${this.course} for Semester ${this.semester}';
+    return `Hi! I am ${this.name}, I am tutoring ${this.course} for Semester ${this.semester}`;
   }
 
   getTutorSemester() {
-    return 'Semester ${this,semester}';
+    return `Semester ${this, semester}`;
   }
 
   getSalary() {
-    this.salary = super.getSalary() / 4;
+    super.getSalary();
+    this.tSalary = this.salary / 4;
+    return `Salary for ${this.name} is NGN${this.tSalary}`
   }
 }
 
@@ -84,46 +89,40 @@ class Tutor extends Lecturer {
 class Student extends Person {
   constructor(sName, sGender, sAge, course, status) {
     super(sName, sGender, sAge);
-    this.stautus = status;
+    this.status = status;
     this.course = course;
     this.fees;
   }
 
   greeting() {
-    return 'Hi! I\'m ${this.name} , I\'m a ${this.course} student';
+    return `Hi! I am ${this.name}, I am a ${this.course} student`;
   }
 
-  //check status, course and get fees
+  //check status to get fees
   getFees() {
-    if (this.course == 'technology' || this.course == 'engineering' || this.course == 'science' && this.status == 'part-time') {
-      this.fees = 300000;
+    if (this.status == 'full-time') {
+      this.fees = 1000000;
     }
-    if (this.course == 'technology' || this.course == 'engineering' || this.course == 'science' && this.status == 'full-time') {
-      this.fees = 600000;
-    }
-    if (this.course == 'law' && this.status == 'part-time') {
-      this.fees = 250000;
-    }
-    if (this.course == 'law' && this.status == 'full-time') {
-      this.fees = 250000;
-    }
-    if (this.course === 'medicine' && this.status == 'part-time') {
+    if (this.status == 'part-time') {
       this.fees = 500000;
     }
-    if (this.course === 'medicine' || this.status == 'full-time') {
-      this.fees = 700000;
-    }
-    return 'School Fees for ${this.name} is NGN ${this.fees}';
+    return `School Fees for ${this.name} is NGN${this.fees}`;
   }
 
   getCourse() {
-    return '${this.course}';
+    return `${this.course}`;
   }
 
   getStatus() {
-    return '${this.status}';
+    return `${this.status}`;
   }
 }
+
+module.exports = {
+  Lecturer,
+  Tutor,
+  Student
+};
 
 
 
